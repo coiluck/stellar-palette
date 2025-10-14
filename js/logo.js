@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(logoAnimation);
     const textTop = "KOKONE";
     const textBottom = "Project";
-    const animationDelay = 0.1; // 秒
+    const animationDelay = 0.07; // 秒
     
     const topElement = document.getElementById('logo-text-top');
     const bottomElement = document.getElementById('logo-text-bottom');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // テキストをレンダリング
     topElement.innerHTML = createAnimatedText(textTop, 0);
-    bottomElement.innerHTML = createAnimatedText(textBottom, textTop.length * animationDelay + 0.2);
+    bottomElement.innerHTML = createAnimatedText(textBottom, textTop.length * animationDelay + 0.15);
 
     const totalAnimationTime = (textTop.length * animationDelay + 0.2) + (textBottom.length - 1) * animationDelay + 0.6;
     setTimeout(() => {
