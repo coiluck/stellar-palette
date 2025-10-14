@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/default.css">
   <link rel="stylesheet" href="./css/logo.css">
+  <link rel="stylesheet" href="./css/top.css">
   <title>星色パレット</title>
 </head>
 <body>
   <div id="modal-logo" class="modal">
     <div class="logo-container">
       <div class="logo-image-container">
-        <img src="./assets/images/logo.svg" alt="星色パレット" class="logo-image">
+        <img src="./assets/images/logo.svg" class="logo-image">
       </div>
       <div class="logo-text-container">
         <p id="logo-text-top"></p>
@@ -19,7 +20,27 @@
       </div>
     </div>
   </div>
+
+  <div id="modal-top" class="modal">
+    <div class="top-image-container">
+      <img src="./assets/images/top.png" class="top-image">
+    </div>
+    <!-- あとでタイトルを入れる -->
+    <div class="top-button-container">
+      <button id="top-button-start" class="top-button">New Game</button>
+      <button id="top-button-continue" class="top-button">Load Game</button>
+      <button id="top-button-gallary" class="top-button">Gallary</button>
+      <button id="top-button-setting" class="top-button">Setting</button>
+    </div>
+  </div>
+
+  <div id="modal-opening" class="modal"></div>
+
+  <div id="modal-gallary" class="modal"></div>
   
+  <div id="modal-setting" class="modal"></div>
+
+  <script src="./js/top.js" type="module"></script>
   <script src="./js/logo.js" type="module"></script>
 </body>
 </html>
