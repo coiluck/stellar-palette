@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./css/default.css">
   <link rel="stylesheet" href="./css/logo.css">
   <link rel="stylesheet" href="./css/top.css">
+  <link rel="stylesheet" href="./css/gallary.css">
   <title>星色パレット</title>
 </head>
 <body>
@@ -36,11 +37,33 @@
 
   <div id="modal-opening" class="modal"></div>
 
-  <div id="modal-gallary" class="modal"></div>
-  
+  <div id="modal-gallary" class="modal">
+    <div class="gallary-image-container">
+      <img src="./assets/images/theme/background.png" class="gallary-image">
+    </div>
+    <div class="gallary-title-container">
+      <div class="gallary-title">
+        <p>Gallary</p>
+      </div>
+    </div>
+    <div class="gallary-close-button-container">
+      <div class="gallary-close-button-image">
+        <img src="./assets/images/logo.svg">
+      </div>
+      <div class="gallary-close-text-container">
+        <div class="gallary-close-text-label">Close</div>
+      </div>
+    </div>
+    <div class="gallary-container">
+      <div class="gallary-item"></div>
+      <div class="gallary-item"></div>
+    </div>
+  </div>
+
   <div id="modal-setting" class="modal"></div>
 
   <script src="./js/top.js" type="module"></script>
   <script src="./js/logo.js" type="module"></script>
+  <script src="./js/gallary.js" type="module"></script>
 </body>
 </html>
