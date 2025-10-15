@@ -29,7 +29,6 @@
   height: 100%;
   mask-image: radial-gradient(circle at 0% 50%, black 50%, transparent 90%);
   -webkit-mask-image: radial-gradient(circle at 0% 50%, black 50%, transparent 90%);
-  border-right: 1px solid #000;
   z-index: -1;
 }
 .top-image-container img.top-image {

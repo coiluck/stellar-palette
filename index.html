@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./css/logo.css">
   <link rel="stylesheet" href="./css/top.css">
   <link rel="stylesheet" href="./css/gallary.css">
+  <link rel="stylesheet" href="./css/setting.css">
   <title>星色パレット</title>
 </head>
 <body>
@@ -60,10 +61,142 @@
     </div>
   </div>
 
-  <div id="modal-setting" class="modal"></div>
+  <div id="modal-setting" class="modal">
+    <div class="setting-image-container">
+      <img src="./assets/images/theme/background.png" class="setting-image">
+    </div>
+    <div class="setting-title-container">
+      <div class="setting-title">
+        <p>Setting</p>
+      </div>
+    </div>
+    <div class="setting-close-button-container">
+      <div class="setting-close-button-image">
+        <img src="./assets/images/logo.svg">
+      </div>
+      <div class="setting-close-text-container">
+        <div class="setting-close-text-label">Close</div>
+      </div>
+    </div>
+    <div class="setting-container">
+      <div class="setting-item">
+        <span class="setting-item-label">BGM Volume</span>
+        <div class="setting-radio-control">
+          <span>Min</span>
+          <input type="radio" name="bgm-volume" id="bgm-0">
+          <label for="bgm-0"></label>
+          <input type="radio" name="bgm-volume" id="bgm-1">
+          <label for="bgm-1"></label>
+          <input type="radio" name="bgm-volume" id="bgm-2" checked>
+          <label for="bgm-2"></label>
+          <input type="radio" name="bgm-volume" id="bgm-3">
+          <label for="bgm-3"></label>
+          <input type="radio" name="bgm-volume" id="bgm-4">
+          <label for="bgm-4"></label>
+          <input type="radio" name="bgm-volume" id="bgm-5">
+          <label for="bgm-5"></label>
+          <input type="radio" name="bgm-volume" id="bgm-6">
+          <label for="bgm-6"></label>
+          <span>Max</span>
+        </div>
+      </div>
+      <div class="setting-item">
+        <span class="setting-item-label">SE Volume</span>
+        <div class="setting-radio-control">
+          <span>Min</span>
+          <input type="radio" name="se-volume" id="se-0">
+          <label for="se-0"></label>
+          <input type="radio" name="se-volume" id="se-1">
+          <label for="se-1"></label>
+          <input type="radio" name="se-volume" id="se-2">
+          <label for="se-2"></label>
+          <input type="radio" name="se-volume" id="se-3">
+          <label for="se-3"></label>
+          <input type="radio" name="se-volume" id="se-4">
+          <label for="se-4"></label>
+          <input type="radio" name="se-volume" id="se-5" checked>
+          <label for="se-5"></label>
+          <input type="radio" name="se-volume" id="se-6">
+          <label for="se-6"></label>
+          <span>Max</span>
+        </div>
+      </div>
+      <div class="setting-item">
+        <span class="setting-item-label">CV Volume</span>
+        <div class="setting-radio-control">
+          <span>Min</span>
+          <input type="radio" name="cv-volume" id="cv-0">
+          <label for="cv-0"></label>
+          <input type="radio" name="cv-volume" id="cv-1">
+          <label for="cv-1"></label>
+          <input type="radio" name="cv-volume" id="cv-2">
+          <label for="cv-2"></label>
+          <input type="radio" name="cv-volume" id="cv-3">
+          <label for="cv-3"></label>
+          <input type="radio" name="cv-volume" id="cv-4">
+          <label for="cv-4"></label>
+          <input type="radio" name="cv-volume" id="cv-5" checked>
+          <label for="cv-5"></label>
+          <input type="radio" name="cv-volume" id="cv-6">
+          <label for="cv-6"></label>
+          <span>Max</span>
+        </div>
+      </div>
+      <div class="setting-item">
+        <span class="setting-item-label">Text Speed</span>
+        <div class="setting-radio-control">
+          <span>Slow</span>
+          <input type="radio" name="text-speed" id="text-speed-0">
+          <label for="text-speed-0"></label>
+          <input type="radio" name="text-speed" id="text-speed-1">
+          <label for="text-speed-1"></label>
+          <input type="radio" name="text-speed" id="text-speed-2">
+          <label for="text-speed-2"></label>
+          <input type="radio" name="text-speed" id="text-speed-3" checked>
+          <label for="text-speed-3"></label>
+          <input type="radio" name="text-speed" id="text-speed-4">
+          <label for="text-speed-4"></label>
+          <input type="radio" name="text-speed" id="text-speed-5">
+          <label for="text-speed-5"></label>
+          <input type="radio" name="text-speed" id="text-speed-6">
+          <label for="text-speed-6"></label>
+          <span>Fast</span>
+        </div>
+      </div>
+      <div class="setting-item">
+        <span class="setting-item-label">Auto Text Speed</span>
+        <div class="setting-radio-control">
+          <span>Slow</span>
+          <input type="radio" name="auto-text-speed" id="auto-text-speed-0">
+          <label for="auto-text-speed-0"></label>
+          <input type="radio" name="auto-text-speed" id="auto-text-speed-1">
+          <label for="auto-text-speed-1"></label>
+          <input type="radio" name="auto-text-speed" id="auto-text-speed-2">
+          <label for="auto-text-speed-2"></label>
+          <input type="radio" name="auto-text-speed" id="auto-text-speed-3" checked>
+          <label for="auto-text-speed-3"></label>
+          <input type="radio" name="auto-text-speed" id="auto-  text-speed-4">
+          <label for="auto-text-speed-4"></label>
+          <input type="radio" name="auto-text-speed" id="auto-text-speed-5">
+          <label for="auto-text-speed-5"></label>
+          <input type="radio" name="auto-text-speed" id="auto-text-speed-6">
+          <label for="auto-text-speed-6"></label>
+          <span>Fast</span>
+        </div>
+      </div>
+      <div class="setting-item">
+        <span class="setting-item-label">Screen Size</span>
+        <div class="setting-button-container">
+          <button class="setting-button-item selected">Window</button>
+          <button class="setting-button-item">Full Screen</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="./js/top.js" type="module"></script>
   <script src="./js/logo.js" type="module"></script>
   <script src="./js/gallary.js" type="module"></script>
+  <script src="./js/setting.js" type="module"></script>
 </body>
 </html>

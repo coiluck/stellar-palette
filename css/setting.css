@@ -1,0 +1,288 @@
+#modal-setting {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#modal-setting * img {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.setting-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.setting-image-container img.setting-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.setting-title-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: drop-shadow(8px 5px 0 #e1c8e1);
+}
+.setting-title {
+  position: relative;
+  padding: 50px 10px 75px;
+  background: linear-gradient(to bottom, #b773dc, #f17388);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+.setting-title::before {
+  content: '';
+  background-image: url('../assets/images/theme/polka_dots.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.setting-title p {
+  font-size: 1.5rem;
+  font-family: serif;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.3rem;
+  writing-mode: vertical-rl;
+}
+
+
+
+.setting-close-button-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.setting-close-button-image {
+  position: relative;
+  display: inline-block;
+}
+
+.setting-close-button-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #b773dc, #f17388);
+  mask-image: url("../assets/images/logo.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("../assets/images/logo.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  z-index: 1;
+}
+.setting-close-button-image img {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.setting-close-text-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.setting-close-text-label {
+  color: #333;
+  position: relative;
+  font-size: .9rem;
+  font-family: serif;
+  letter-spacing: 0.1rem;
+}
+.setting-close-text-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+.setting-container {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.setting-container::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 480px) {
+  .setting-container {
+    width: 60%;
+  }
+}
+
+.setting-item {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+}
+@media (max-width: 780px) {
+  .setting-item {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.setting-item-label {
+  background: linear-gradient(to bottom, #b773dc, #f17388);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.1rem;
+  font-family: serif;
+  font-weight: bold;
+}
+.setting-radio-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.setting-radio-control span {
+  width: 2rem; /* これは`Min と `Slow` の文字の違いによるスタイルのずれを防ぐためにある、サイズはテキトー */
+  color: #555;
+  font-size: .7rem;
+  font-family: serif;
+}
+.setting-radio-control input[type="radio"] {
+  display: none;
+}
+.setting-radio-control label {
+  display: block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #a9a9a9;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.setting-radio-control input:checked ~ label {
+  background: #fff;
+  border-color: #a9a9a9;
+}
+/* 選択中のボタン */
+.setting-radio-control input:checked + label {
+  background: transparent;
+  border: none;
+}
+.setting-radio-control input:checked + label::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to bottom, #b773dc, #f17388);
+  mask-image: url('../assets/images/star.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url('../assets/images/theme/star.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+@media (max-width: 580px) {
+  .setting-item-label {
+    font-size: 1rem;
+  }
+  .setting-radio-control span {
+    font-size: .6rem;
+  }
+  .setting-item {
+    grid-template-columns: 2fr 3fr;
+  }
+  .setting-radio-control label {
+    width: 15px;
+    height: 15px;
+  }
+}
+.setting-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.setting-button-item {
+  position: relative;
+  min-width: 120px;
+  font-family: serif;
+  font-size: .7rem;
+  letter-spacing: 0.1rem;
+  padding: 5px 15px;
+  border: none;
+  border-radius: calc(10px + 1rem);;
+  cursor: pointer;
+}
+.setting-button-item.selected {
+  color: rgb(253, 238, 213);
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(to right, #f17388, #b773dc);
+}
+.setting-button-item.selected::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: calc(10px - 4px + 1rem);
+}
+.setting-button-item:not(.selected) {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+.setting-button-item:hover:not(.selected) {
+  background: linear-gradient(to right, #fbd5dc, #e9d5f5);
+}
