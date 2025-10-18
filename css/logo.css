@@ -36,6 +36,14 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
 .logo-text-container {
@@ -49,6 +57,10 @@
   font-size: 2.5rem;
   font-family: 'Quantum', sans-serif;
   font-weight: bold;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 .logo-text-container p span {
   display: inline-block;

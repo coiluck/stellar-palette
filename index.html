@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./css/default.css">
   <link rel="stylesheet" href="./css/logo.css">
   <link rel="stylesheet" href="./css/top.css">
+  <link rel="stylesheet" href="./css/loadgame.css">
   <link rel="stylesheet" href="./css/gallary.css">
   <link rel="stylesheet" href="./css/setting.css">
   <title>星色パレット</title>
@@ -37,6 +38,91 @@
   </div>
 
   <div id="modal-opening" class="modal"></div>
+
+  <div id="modal-loadgame" class="modal">
+    <div class="loadgame-image-container">
+      <img src="./assets/images/theme/background.png" class="loadgame-image">
+    </div>
+    <div class="loadgame-title-container">
+      <div class="loadgame-title">
+        <p>Load</p>
+      </div>
+    </div>
+    <div class="loadgame-close-button-container">
+      <div class="loadgame-close-button-image">
+        <img src="./assets/images/logo.svg">
+      </div>
+        <div class="loadgame-close-text-container">
+        <div class="loadgame-close-text-label">Close</div>
+      </div>
+    </div>
+    <div class="loadgame-container">
+      <div class="loadgame-item selected">
+        <div class="loadgame-item-image-container">
+          <img src="./assets/images/top.png" class="loadgame-item-image">
+        </div>
+        <div class="loadgame-item-text-container">
+          <div class="loadgame-item-text-top">
+            <p>DAY 01</p>
+            <p class="loadgame-item-text-top-date">2025/10/18 10:00</p>
+          </div>
+          <div class="loadgame-item-text-bottom">
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="loadgame-item">
+        <div class="loadgame-item-image-container">
+          <img src="./assets/images/top.png" class="loadgame-item-image">
+        </div>
+        <div class="loadgame-item-text-container">
+          <div class="loadgame-item-text-top">
+            <p>DAY 01</p>
+            <p class="loadgame-item-text-top-date">2025/10/18 10:00</p>
+          </div>
+          <div class="loadgame-item-text-bottom">
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="loadgame-item">
+        <div class="loadgame-item-image-container">
+        </div>
+        <div class="loadgame-item-text-container">
+          <div class="loadgame-item-text-top">
+            <p>No Data</p>
+          </div>
+          <div class="loadgame-item-text-bottom">
+            <p>保存データがありません</p>
+          </div>
+        </div>
+      </div>
+      <div class="loadgame-item">
+        <div class="loadgame-item-image-container">
+        </div>
+        <div class="loadgame-item-text-container">
+          <div class="loadgame-item-text-top">
+            <p>No Data</p>
+          </div>
+          <div class="loadgame-item-text-bottom">
+            <p>保存データがありません</p>
+          </div>
+        </div>
+      </div>
+      <div class="loadgame-item">
+        <div class="loadgame-item-image-container">
+        </div>
+        <div class="loadgame-item-text-container">
+          <div class="loadgame-item-text-top">
+            <p>No Data</p>
+          </div>
+          <div class="loadgame-item-text-bottom">
+            <p>保存データがありません</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div id="modal-gallary" class="modal">
     <div class="gallary-image-container">
@@ -196,6 +282,7 @@
 
   <script src="./js/top.js" type="module"></script>
   <script src="./js/logo.js" type="module"></script>
+  <script src="./js/loadGame.js" type="module"></script>
   <script src="./js/gallary.js" type="module"></script>
   <script src="./js/setting.js" type="module"></script>
 </body>

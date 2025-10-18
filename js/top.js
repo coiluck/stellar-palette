@@ -6,7 +6,7 @@ document.getElementById("top-button-start").addEventListener("click", () => {
 });
 
 document.getElementById("top-button-continue").addEventListener("click", () => {
-  changeModal("opening");
+  changeModal("loadgame");
 });
 
 document.getElementById("top-button-gallary").addEventListener("click", () => {

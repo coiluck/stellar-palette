@@ -120,6 +120,10 @@
   font-size: .9rem;
   font-family: serif;
   letter-spacing: 0.1rem;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 .gallary-close-text-label::before {
   content: '';
@@ -148,9 +152,9 @@
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+}
+.gallary-container::-webkit-scrollbar {
+  display: none;
 }
 @media (max-width: 480px) {
   .gallary-container {
