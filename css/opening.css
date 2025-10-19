@@ -26,17 +26,18 @@
   height: 25%;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.72) 20%,
-    rgba(0, 0, 0, 0.64) 35%,
-    rgba(0, 0, 0, 0.48) 55%,
-    rgba(0, 0, 0, 0.32) 75%,
-    rgba(0, 0, 0, 0.16)90%,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.81) 20%,
+    rgba(0, 0, 0, 0.72) 35%,
+    rgba(0, 0, 0, 0.54) 55%,
+    rgba(0, 0, 0, 0.36) 75%,
+    rgba(0, 0, 0, 0.18)90%,
     rgba(0, 0, 0, 0) 100%
   );  
   display: flex;
   flex-direction: column;
   padding: 5px 40px 5% 150px;
+  z-index: 1;
 }
 
 .text-name {
@@ -68,10 +69,53 @@
   padding: 0 10px;
   width: 150px;
   height: 200px;
-  z-index: 1;
+  z-index: 2;
 }
 .text-character-container img.text-character {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+/* 背景画像 */
+.background-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.background-image-container img.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* アイコン */
+.icon-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  z-index: 2;
+}
+.icon-item {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.icon-item img.icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+.icon-item img.icon-image:hover {
+  filter: 
+   drop-shadow(2px 2px 4px rgba(183, 115, 220, 0.7))
+   drop-shadow(-2px -2px 4px rgba(241, 115, 136, 0.7));
 }
