@@ -1,0 +1,77 @@
+#modal-opening {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#modal-opening * img {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+.text-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.72) 20%,
+    rgba(0, 0, 0, 0.64) 35%,
+    rgba(0, 0, 0, 0.48) 55%,
+    rgba(0, 0, 0, 0.32) 75%,
+    rgba(0, 0, 0, 0.16)90%,
+    rgba(0, 0, 0, 0) 100%
+  );  
+  display: flex;
+  flex-direction: column;
+  padding: 5px 40px 5% 150px;
+}
+
+.text-name {
+  font-family: serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.text-message::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 10px 0;
+}
+.text-message {
+  font-family: serif;
+  font-size: .9rem;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.text-character-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 10px;
+  width: 150px;
+  height: 200px;
+  z-index: 1;
+}
+.text-character-container img.text-character {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
