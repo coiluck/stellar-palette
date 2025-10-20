@@ -7,7 +7,7 @@
   left: 0;
 }
 
-#modal-opening * img {
+#modal-opening > * {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -118,4 +118,60 @@
   filter: 
    drop-shadow(2px 2px 4px rgba(183, 115, 220, 0.7))
    drop-shadow(-2px -2px 4px rgba(241, 115, 136, 0.7));
+}
+
+/* 選択肢 */
+.choices-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 3;
+}
+.choices-container .choice-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 60%;
+  max-width: 300px;
+  min-height: 1.5rem;
+  padding: 5px 15px;
+  font-family: serif;
+  font-size: .8rem;
+  font-weight: 100;
+  color: #5b396e;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #fbd5dc, #e1c8e1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.2);
+  border-radius: calc(10px + .9rem);
+  transition: all 0.3s ease;
+}
+.choices-container .choice-button:hover {
+  font-weight: 300;
+  color: rgba(253, 238, 213, 1);
+  background: linear-gradient(to right, #f17388, #b773dc);
+}
+.choices-container .choice-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(30px / 2);
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: rgba(253, 238, 213, 1);
+  clip-path: polygon(49.71% 6.84%, 50.29% 7.03%, 54.00% 35.06%, 56.74% 36.13%, 59.47% 37.70%, 69.04% 30.47%, 69.43% 30.57%, 62.21% 40.43%, 63.77% 43.16%, 64.84% 45.90%, 93.07% 49.71%, 92.87% 50.29%, 64.84% 54.00%, 63.77% 56.74%, 62.21% 59.47%, 69.43% 69.04%, 69.34% 69.43%, 59.47% 62.21%, 56.74% 63.77%, 54.00% 64.84%, 50.20% 93.07%, 49.61% 92.87%, 45.90% 64.84%, 43.16% 63.77%, 40.43% 62.21%, 30.86% 69.43%, 30.47% 69.34%, 37.70% 59.47%, 36.13% 56.74%, 35.06% 54.00%, 6.84% 50.20%, 7.03% 49.61%, 35.06% 45.90%, 36.13% 43.16%, 37.70% 40.43%, 30.47% 30.86%, 30.57% 30.47%, 40.43% 37.70%, 43.16% 36.13%, 45.90% 35.06%, 49.71% 6.84%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.choices-container .choice-button:hover::after {
+  opacity: 1;
 }
