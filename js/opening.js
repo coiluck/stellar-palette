@@ -86,7 +86,7 @@ async function displayStory(index, executeAction = true) {
   }
 
   // テキストを表示
-  displayText(story.text);
+  await displayText(story.text);
 
   // 発話者を表示
   if (story.speaker) {
@@ -98,10 +98,10 @@ async function displayStory(index, executeAction = true) {
 
   // 選択肢を消去(戻るボタンで選択肢が残るのを防ぐ)
   if (isDisplayingSelection) {
-      isDisplayingSelection = false;
-      document.getElementById('opening-choices-container').innerHTML = '';
-      document.getElementById('opening-choices-container').style.display = 'none';
-      document.getElementById('opening-choices-container').style.pointerEvents = 'none';
+    isDisplayingSelection = false;
+    document.getElementById('opening-choices-container').innerHTML = '';
+    document.getElementById('opening-choices-container').style.display = 'none';
+    document.getElementById('opening-choices-container').style.pointerEvents = 'none';
   }
  
   // 戻るボタンの際は選択肢を表示しない
@@ -188,6 +188,13 @@ document.getElementById('opening-icon-prev-text').addEventListener('click', (eve
   // 状態を「prevState」が表示された時点の状態に復元
   branchStack = JSON.parse(JSON.stringify(prevState.branchStack));
   openingStoryIndex = prevState.openingStoryIndex;
+
+  const isBranch = branchStack.length > 0;
+  if (isBranch) {
+    branchStack[branchStack.length - 1].index++;
+  } else {
+    openingStoryIndex++;
+  }
 
   updateGlobalGameState();
 
