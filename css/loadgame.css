@@ -294,4 +294,7 @@
     padding: 15px 20px;
     gap: 20px;
   }
+  .loadgame-item.selected::after {
+    left: calc(20px / 2);
+  }
 }

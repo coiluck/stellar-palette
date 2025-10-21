@@ -5,7 +5,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
 }
 
 .menu-background-layer {
@@ -33,6 +32,7 @@
   z-index: 2;
 }
 .menu-item {
+  position: relative;
   color: rgb(231, 224, 242);
   font-size: 1.1rem;
   font-family: serif;
@@ -45,6 +45,11 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  transition: all 0.3s ease;
+}
+.menu-item:hover {
+  color: rgb(255, 165, 255);
+  text-shadow: 2px 2px 4px rgba(247, 216, 255, 0.9);
 }
 
 

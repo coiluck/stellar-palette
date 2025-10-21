@@ -1,6 +1,10 @@
 // setting.js
-import { changeModal } from './modules/changeModal.js';
+import { changeModal, closeModal } from './modules/changeModal.js';
 
 document.querySelector('.setting-close-button-container').addEventListener('click', () => {
-  changeModal('top');
+  if (document.getElementById('modal-setting').style.zIndex === '100') {
+    closeModal('setting');
+  } else {
+    changeModal('top', null, 500);
+  }
 });
