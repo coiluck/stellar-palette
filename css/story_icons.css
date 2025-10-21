@@ -1,0 +1,107 @@
+#modal-menu {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.menu-background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.menu-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 40px;
+  height: 100%;
+  width: auto;
+  padding: 60px 40px;
+  background: linear-gradient(to right, rgba(28, 10, 61, 0), rgba(28, 10, 61, 0.95));
+  z-index: 2;
+}
+.menu-item {
+  color: rgb(231, 224, 242);
+  font-size: 1.1rem;
+  font-family: serif;
+  font-weight: 400;
+  text-align: end;
+  text-shadow: 2px 2px 4px rgba(206, 150, 221, 0.7);
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+
+.menu-close-button-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+}
+.menu-close-button-image {
+  position: relative;
+  display: inline-block;
+}
+.menu-close-button-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #b773dc, #f17388);
+  mask-image: url("../assets/images/logo.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("../assets/images/logo.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  z-index: 1;
+}
+.menu-close-button-image img {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.menu-close-text-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.menu-close-text-label {
+  color: #e4e4e4;
+  position: relative;
+  font-size: .9rem;
+  font-family: serif;
+  letter-spacing: 0.1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

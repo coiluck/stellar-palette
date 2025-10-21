@@ -221,7 +221,7 @@ async function displayText(text) {
       break;
     }
   }
-  const delay = 16 - textSpeed * 2;
+  const delay = 30 - textSpeed * 3;
   document.getElementById('opening-text').innerHTML = '';
   const textArray = text.split('');
   for (const char of textArray) {
