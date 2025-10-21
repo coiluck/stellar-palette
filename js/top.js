@@ -2,8 +2,8 @@
 import { changeModal } from "./modules/changeModal.js";
 
 document.getElementById("top-button-start").addEventListener("click", () => {
-  // indexを初期化する必要がある
-  // あとで書く
+  // indexとかを初期化する必要がある
+  // これはopening.jsでやる
   changeModal("opening");
 });
 

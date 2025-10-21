@@ -9,6 +9,16 @@ let isUpdating = false;
 let branchStack = []; // 分岐管理
 let displayHistory = []; // 履歴
 
+document.getElementById("top-button-start").addEventListener("click", () => {
+  // 初期化
+  openingStoryIndex = 0;
+  isDisplayingSelection = false;
+  isUpdating = false;
+  branchStack = [];
+  displayHistory = [];
+  updateStory();
+});
+
 import { globalGameState } from './modules/gameState.js';
 
 document.getElementById('modal-opening').addEventListener('click', () => {
