@@ -5,6 +5,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  background-color: rgba(246, 238, 238);
 }
 
 #modal-loadgame * img {
@@ -174,16 +175,38 @@
   box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
   background-color: rgba(246, 238, 238, 0.5);
   backdrop-filter: blur(10px);
+  cursor: pointer;
 }
 .loadgame-item.selected {
   box-shadow:
   0 4px 10px rgba(183, 115, 220, 0.3),
   0 2px 20px rgba(241, 115, 136, 0.3);
 }
+.loadgame-item:not(.selected)::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  padding: 1px; /* 枠の太さ */
+  border-radius: inherit;
+  background: linear-gradient(to bottom, rgba(183, 115, 220, 0.6), rgba(241, 115, 136, 0.6));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.loadgame-item:not(.selected):hover::before {
+  opacity: 1;
+}
 .loadgame-item.selected::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: -2px;
   padding: 2px; /* 枠の太さ */
   border-radius: inherit;
   background: linear-gradient(to bottom, #b773dc, #f17388);
