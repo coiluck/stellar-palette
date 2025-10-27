@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const textTop = "KOKONE";
     const textBottom = "Project";
     const animationDelay = 0.07; // 秒
-    
+
     const topElement = document.getElementById('logo-text-top');
     const bottomElement = document.getElementById('logo-text-bottom');
 
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return `<span class="animate-${logoAnimation}" style="animation-delay: ${delay}s">${char}</span>`;
       }).join('');
     };
-    
+
     // テキストをレンダリング
     topElement.innerHTML = createAnimatedText(textTop, 0);
     bottomElement.innerHTML = createAnimatedText(textBottom, textTop.length * animationDelay + 0.15);

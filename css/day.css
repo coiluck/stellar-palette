@@ -1,0 +1,144 @@
+#modal-day {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(246, 238, 238);
+}
+#modal-day > * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+.day-background-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.day-background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.day-click-text {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #1e1e1e;
+  font-size: 1rem;
+  font-family: serif;
+  letter-spacing: 0.1rem;
+}
+
+.day-container {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  width: 120%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+.day-container.animate {
+  animation: slide 1s linear forwards;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(-28%);
+  }
+  75% {
+    transform: translateX(-23%);
+  }
+  90% {
+    transform: translateX(-26%);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+.day-item {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  padding: 25px 0;
+  text-align: center;
+}
+.day-item::before {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  background: #f2e1e1;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(181, 181, 181, 0.5);
+}
+.day-item::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #f2e1e1;
+  box-shadow: 0 0 10px rgba(181, 181, 181, 0.5);
+}
+.day-item.first::after {
+  left: 50%;
+}
+.day-item:not(.first):first-child::after {
+  left: -50%;
+}
+.day-item.last::after {
+  right: 50%;
+}
+.day-item:not(.last):last-child::after {
+  right: -50%;
+}
+
+#day-text-nextCurrent {
+  transition: all 0.5s ease;
+}
+.day-text {
+  position: relative;
+  width: fit-content;
+  padding: 5px 10px;
+  margin: 0 auto;
+  color: #1e1e1e;
+  font-size: 1rem;
+  font-family: serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.1rem;
+  z-index: 0;
+}
+.day-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(252, 167, 181, 0.6) 0%, rgba(227, 180, 253, 0.6) 100%);
+  filter: blur(10px);
+  transform: translateZ(0);
+  z-index: -1;
+}

@@ -1,18 +1,27 @@
 // scenario.js
+import { nextDay, addBackgroundEffect } from './scenarioAction.js';
+import { globalGameState } from './gameState.js';
+
 export const openingScenario = [
-  { 
+  {
     text: 'aaa',
     speaker: 'ココネ',
     choiceId: 'test',
   },
-  { 
+  {
     text: 'bbb',
     action: async () => {
       await console.log('bbb');
     }
   },
   { text: 'ccc' },
-  { text: 'ddddddddddddddddddddddddddd' },
+  {
+    text: 'ddddddddddddddddddddddddddd',
+    action: async () => {
+      nextDay('4', 'background/room_nighttime.jpg');
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+  },
   { text: 'eeeeeeeeeeeeeeeeeeeeeeeeeee' },
 ]
 
@@ -28,7 +37,7 @@ export const openingChoices = {
     {
       buttonText: '選択肢B',
       branch: [
-        { 
+        {
           text: 'b-1',
           choiceId: 'test2',
         },
