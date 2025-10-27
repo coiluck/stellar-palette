@@ -1,5 +1,5 @@
 // scenario.js
-import { nextDay, addBackgroundEffect } from './scenarioAction.js';
+import { nextDay, MoveBackgroundImage, changeBackgroundImage, shakeBackgroundImage, openBackgroundImage } from './scenarioAction.js';
 import { globalGameState } from './gameState.js';
 
 export const openingScenario = [
@@ -12,6 +12,7 @@ export const openingScenario = [
     text: 'bbb',
     action: async () => {
       await console.log('bbb');
+      openBackgroundImage();
     }
   },
   { text: 'ccc' },

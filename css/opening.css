@@ -33,7 +33,7 @@
     rgba(0, 0, 0, 0.36) 75%,
     rgba(0, 0, 0, 0.18)90%,
     rgba(0, 0, 0, 0) 100%
-  );  
+  );
   display: flex;
   flex-direction: column;
   padding: 5px 40px 5% 150px;
@@ -115,7 +115,7 @@
   transition: all 0.3s ease;
 }
 .icon-item img.icon-image:hover {
-  filter: 
+  filter:
    drop-shadow(2px 2px 4px rgba(183, 115, 220, 0.7))
    drop-shadow(-2px -2px 4px rgba(241, 115, 136, 0.7));
 }
@@ -174,4 +174,22 @@
 }
 .choices-container .choice-button:hover::after {
   opacity: 1;
+}
+
+
+@keyframes eyeOpenAnimation {
+  0% {
+    clip-path: ellipse(100% 0% at center);
+    filter: blur(15px);
+  }
+  20% {
+    clip-path: ellipse(100% 15% at center);
+  }
+  50% {
+    clip-path: ellipse(100% 3% at center);
+  }
+  100% {
+    clip-path: ellipse(100% 100% at center);
+    filter: blur(0px);
+  }
 }
