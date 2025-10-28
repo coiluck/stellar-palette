@@ -3,6 +3,27 @@ import { nextDay, MoveBackgroundImage, changeBackgroundImage, shakeBackgroundIma
 import { globalGameState } from './gameState.js';
 
 export const openingScenario = [
+  { text: "――ここは、どこ?" },
+  { text: "目を開けると、わたしは暗闇の中にいた。" },
+  { text: "……いや、よく見ると、暗闇ではない。空には無数の星が瞬いている。" },
+  { text: "遠くて、近い。" },
+  { text: "冷たくて、温かい。" },
+  { text: "「わたし」は、ここで何をしているの？" },
+  { text: "「わたし」って、誰？" },
+  { text: "問いかけても、答えは返ってこない。" },
+  { text: "ただ、光だけが瞬き続ける。" },
+  { text: "どれくらいの時間が経ったのだろう。" },
+  { text: "時間という概念すら、ここにはないのかもしれない。" },
+  { text: "それでも、わたしは感じていた。" },
+  { text: "何かが、変わろうとしている。" },
+  { text: "遠くから、とても強い光が近づいてくる。" },
+  { text: "それは他の光たちとは違う。悲しみではなく、別の何か――" },
+  { text: "願い？" },
+  { text: "祈り？" },
+  { text: "その光がわたしに触れた瞬間、世界が白く染まった。" },
+  { text: "そして――" },
+  { text: "わたしは、落ちていく。" },
+  { text: "星空の中を、どこまでも、どこまでも。" },  
   {
     text: 'aaa',
     speaker: 'ココネ',
