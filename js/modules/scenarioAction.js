@@ -4,6 +4,7 @@ import { showModal, closeModal } from "./changeModal.js";
 export async function nextDay(nextDay, backgroundImage, clickTextColor = 'white') {
   // セットアップ処理
   document.querySelector('#modal-day .day-click-text').textContent = "";
+  document.querySelector('#modal-day .day-click-text').classList.remove('fade-in');
   document.querySelector('#modal-day .day-background-image img').src = `./assets/images/${backgroundImage}`;
   const maxDay = 31;
   document.querySelector('#modal-day #day-text-previous').textContent = nextDay - 2 > 0 ? `Day${nextDay - 2}` : ``;
@@ -21,7 +22,6 @@ export async function nextDay(nextDay, backgroundImage, clickTextColor = 'white'
   }, 1100);
   // クリック可能にする
   await new Promise(resolve => setTimeout(resolve, 1500));
-  document.querySelector('#modal-day .day-click-text').classList.remove('fade-in');
   document.querySelector('#modal-day .day-click-text').style.color = clickTextColor;
   document.querySelector('#modal-day .day-click-text').textContent = "- Click to Continue -";
   document.querySelector('#modal-day .day-click-text').classList.add('fade-in');
