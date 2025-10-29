@@ -60,8 +60,8 @@ async function updateStory() {
   await displayStory(index, true);
 
   // 表示した状態を履歴に追加
-  displayHistory.push({ 
-    scenario: scenario, 
+  displayHistory.push({
+    scenario: scenario,
     index: index,
     branchStack: JSON.parse(JSON.stringify(branchStack)),
     openingStoryIndex: openingStoryIndex
@@ -79,7 +79,7 @@ async function updateStory() {
 }
 
 async function displayStory(index, executeAction = true) {
- 
+
   const isBranch = branchStack.length > 0;
   const currentScenario = isBranch ? branchStack[branchStack.length - 1].scenario : Scenario;
 
@@ -87,16 +87,13 @@ async function displayStory(index, executeAction = true) {
     console.warn(`Invalid story index: ${index}`);
     return;
   }
- 
+
   const story = currentScenario[index];
 
   // actionが設定されていれば実行
   if (executeAction && typeof story.action === 'function') {
     await story.action(); // 待つ
   }
-
-  // テキストを表示
-  await displayText(story.text);
 
   // 発話者を表示
   if (story.speaker) {
@@ -106,6 +103,9 @@ async function displayStory(index, executeAction = true) {
     document.getElementById('opening-character-name').style.visibility = 'hidden';
   }
 
+  // テキストを表示
+  await displayText(story.text);
+
   // 選択肢を消去(戻るボタンで選択肢が残るのを防ぐ)
   if (isDisplayingSelection) {
     isDisplayingSelection = false;
@@ -113,7 +113,7 @@ async function displayStory(index, executeAction = true) {
     document.getElementById('opening-choices-container').style.display = 'none';
     document.getElementById('opening-choices-container').style.pointerEvents = 'none';
   }
- 
+
   // 戻るボタンの際は選択肢を表示しない
   if (!executeAction) {
     return;
@@ -146,18 +146,18 @@ function displayChoices(choiceId) {
       event.stopPropagation();
       isDisplayingSelection = false;
       document.getElementById('opening-choices-container').innerHTML = '';
-     
+
       // 選択された分岐ストーリーを保存
       branchStack.push({
         scenario: choice.branch,
         index: 0
       });
-     
+
       // 選択肢を選んだら履歴をリセット
       displayHistory = [];
 
       updateGlobalGameState();
-     
+
       updateStory(); // 新しい分岐の最初のストーリーを開始
     });
     document.getElementById('opening-choices-container').appendChild(button);
@@ -181,7 +181,7 @@ updateStory();
 
 // 戻るボタン
 document.getElementById('opening-icon-prev-text').addEventListener('click', (event) => {
-  event.stopPropagation(); 
+  event.stopPropagation();
   // 履歴が2未満(現在の + 戻る先)は戻れない
   if (isDisplayingSelection || isUpdating || displayHistory.length < 2) {
     console.log('選択肢より前には戻れません');
@@ -191,10 +191,10 @@ document.getElementById('opening-icon-prev-text').addEventListener('click', (eve
 
   // 現在の状態を履歴から削除
   displayHistory.pop();
- 
+
   // 戻るべき直前の状態を取得
   const prevState = displayHistory[displayHistory.length - 1];
- 
+
   // 状態を「prevState」が表示された時点の状態に復元
   branchStack = JSON.parse(JSON.stringify(prevState.branchStack));
   openingStoryIndex = prevState.openingStoryIndex;

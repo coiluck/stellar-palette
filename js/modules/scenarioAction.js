@@ -1,16 +1,33 @@
 // scenarioAction.js
 import { showModal, closeModal } from "./changeModal.js";
+import { globalGameState } from './gameState.js';
 
 export async function nextDay(nextDay, backgroundImage, clickTextColor = 'white') {
   // セットアップ処理
   document.querySelector('#modal-day .day-click-text').textContent = "";
   document.querySelector('#modal-day .day-click-text').classList.remove('fade-in');
-  document.querySelector('#modal-day .day-background-image img').src = `./assets/images/${backgroundImage}`;
+  document.querySelector('#modal-day .day-background-image img').src = `./assets/images/background/${backgroundImage}`;
   const maxDay = 31;
-  document.querySelector('#modal-day #day-text-previous').textContent = nextDay - 2 > 0 ? `Day${nextDay - 2}` : ``;
-  document.querySelector('#modal-day #day-text-current').textContent = nextDay - 1 > 0 ? `Day${nextDay - 1}` : ``;
+  if (nextDay - 2 > 0) {
+    document.querySelector('#modal-day #day-text-previous').textContent = `Day${nextDay - 2}`;
+    document.querySelector('#modal-day #day-text-previous').style.visibility = 'visible';
+    document.querySelector('#day-text-previous').parentElement.classList.remove('misenai');
+  } else {
+    document.querySelector('#modal-day #day-text-previous').textContent = `invisible`;
+    document.querySelector('#modal-day #day-text-previous').style.visibility = 'hidden';
+    document.querySelector('#day-text-previous').parentElement.classList.add('misenai');
+  }
+  document.querySelector('#modal-day #day-text-current').textContent = `Day${nextDay - 1}`;
   document.querySelector('#modal-day #day-text-nextCurrent').textContent = `Day${nextDay}`;
-  document.querySelector('#modal-day #day-text-nextNext').textContent = nextDay < maxDay ? `Day${nextDay + 1}` : ``;
+  if (nextDay < maxDay) {
+    document.querySelector('#modal-day #day-text-nextNext').textContent = `Day${nextDay + 1}`;
+    document.querySelector('#modal-day #day-text-nextNext').style.visibility = 'visible';
+    document.querySelector('#day-text-nextNext').parentElement.classList.remove('misenai');
+  } else {
+    document.querySelector('#modal-day #day-text-nextNext').textContent = `invisible`;
+    document.querySelector('#modal-day #day-text-nextNext').style.visibility = 'hidden';
+    document.querySelector('#day-text-nextNext').parentElement.classList.add('misenai');
+  }
   // 表示
   showModal('day');
   // DAY更新アニメーション
@@ -75,33 +92,39 @@ export function MoveBackgroundImage(direction = 'leftToRight', duration = 5000) 
 }
 
 export function changeBackgroundImage(object, imagePath) {
-  const modal = document.getElementById(`modal-${object}`);
-  const backgroundImage = modal.querySelector(`#${object}-background-image-container .background-image`);
-  const newImageSrc = `./assets/images/${imagePath}`;
+  return new Promise((resolve) => {
+    const modal = document.getElementById(`modal-${object}`);
+    const backgroundImage = modal.querySelector(`#${object}-background-image-container .background-image`);
+    const newImageSrc = `./assets/images/background/${imagePath}`;
 
-  // フェードアウト
-  modal.classList.remove("fade-in");
-  modal.classList.add("fade-out");
-  modal.style.pointerEvents = "none";
+    // フェードアウト
+    modal.classList.remove("fade-in");
+    modal.classList.add("fade-out");
+    modal.style.pointerEvents = "none";
 
-  // アニメーション後
-  setTimeout(() => {
-    const tempImage = new Image();
-    tempImage.src = newImageSrc;
+    // アニメーション後
+    setTimeout(() => {
+      const tempImage = new Image();
+      tempImage.src = newImageSrc;
 
-    backgroundImage.style.transition = '';
-    backgroundImage.style.transform = '';
+      backgroundImage.style.transition = '';
+      backgroundImage.style.transform = '';
 
-    // 画像の読み込み完了後
-    tempImage.onload = () => {
-      backgroundImage.src = newImageSrc;
-      // フェードイン
-      modal.classList.remove("fade-out");
-      modal.classList.add("fade-in");
-      modal.style.pointerEvents = "auto";
-    };
-  }, 500);
+      // 画像の読み込み完了後
+      tempImage.onload = () => {
+        backgroundImage.src = newImageSrc;
+        globalGameState.LoadImageSrc = newImageSrc;
+
+        resolve(); // ここで返せば背景の変更と同時にテキストも表示され始めるはず
+        // フェードイン
+        modal.classList.remove("fade-out");
+        modal.classList.add("fade-in");
+        modal.style.pointerEvents = "auto";
+      };
+    }, 500);
+  });
 }
+
 
 export function shakeBackgroundImage(duration = 500, intensity = 10) {
   const img = document.querySelector('#opening-background-image-container .background-image');

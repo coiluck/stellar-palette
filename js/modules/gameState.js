@@ -13,7 +13,7 @@ const initialState = {
       shiori: 0,
     }
   },
-  LoadImageSrc: '',
+  LoadImageSrc: './assets/images/background/nightsky.png',
 };
 
 export const globalGameState = structuredClone(initialState); // 初期化

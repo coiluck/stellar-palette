@@ -78,7 +78,7 @@
   padding: 25px 0;
   text-align: center;
 }
-.day-item::before {
+.day-item:not(.misenai)::before {
   content: '';
   position: absolute;
   bottom: 4px;
@@ -104,13 +104,13 @@
 .day-item.first::after {
   left: 50%;
 }
-.day-item:not(.first):first-child::after {
+.day-item:first-child::after {
   left: -50%;
 }
 .day-item.last::after {
   right: 50%;
 }
-.day-item:not(.last):last-child::after {
+.day-item:last-child::after {
   right: -50%;
 }
 
